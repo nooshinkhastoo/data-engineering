@@ -1,0 +1,26 @@
+# Generate RSA Key
+
+ssh-keygen -t rsa -b 2048
+
+# Public Key
+
+cat ~/.ssh/id_rsa.pub
+
+# Passwordless Authentication
+
+Copy public key to remote server:
+
+ssh-copy-id user@server
+
+Now login without password:
+
+ssh user@server
+
+# SSH Config Example
+
+Host myserver
+    HostName 192.168.1.10
+    User ubuntu
+    Port 22
+    IdentityFile ~/.ssh/id_rsa
+

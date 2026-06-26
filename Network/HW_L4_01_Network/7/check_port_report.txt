@@ -1,0 +1,18 @@
+===== HTTP Port 80 =====
+Connection failed: Connection refused
+telnet: Unable to connect to remote host: Connection refused
+Trying ::1...
+Trying 127.0.0.1...
+
+===== SSH Port 22 =====
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+SSH-2.0-OpenSSH_9.9p1 Debian-3
+Connection closed by foreign host.
+
+===== MySQL Port 3306 =====
+Connection failed: Connection refused
+telnet: Unable to connect to remote host: Connection refused
+Trying ::1...
+Trying 127.0.0.1...

@@ -1,0 +1,16 @@
+services:
+
+  producer:
+    build: ./producer
+    environment:
+      LOG_INTERVAL: 2
+    volumes:
+      - shared_data:/shared
+
+  consumer:
+    build: ./consumer
+    volumes:
+      - shared_data:/shared
+
+volumes:
+  shared_data:

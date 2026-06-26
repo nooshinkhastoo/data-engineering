@@ -1,0 +1,9 @@
+===== LISTEN Ports =====
+Netid State  Recv-Q Send-Q Local Address:Port Peer Address:Port
+tcp   LISTEN 0      128          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      128             [::]:22           [::]:*   
+
+===== ESTABLISHED Connections =====
+Recv-Q Send-Q Local Address:Port Peer Address:Port
+
+===== Processes on Port 80 and 443 =====

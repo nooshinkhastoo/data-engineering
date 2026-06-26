@@ -1,0 +1,5 @@
+# capture HTTP packets for 30 seconds
+sudo timeout 30 tcpdump -i any tcp port 80 -w http_capture.pcap
+
+# capture DNS packets
+sudo tcpdump -i any port 53 -w dns_capture.pcap
