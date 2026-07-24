@@ -1,0 +1,55 @@
+services:
+
+  master:
+    build:
+      context: ./master
+
+    container_name: pg-master
+    restart: always
+
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: mydb
+
+    command: >
+      postgres
+      -c listen_addresses=*
+      -c wal_level=replica
+      -c max_wal_senders=10
+      -c max_replication_slots=10
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - master-data:/var/lib/postgresql/data
+
+
+  replica:
+    build:
+      context: ./replica
+
+    container_name: pg-replica
+    restart: always
+
+    depends_on:
+      - master
+
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: mydb
+
+    command: ["/bin/bash", "/setup-replica.sh"]
+
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - replica-data:/var/lib/postgresql/data
+
+
+volumes:
+  master-data:
+  replica-data:
