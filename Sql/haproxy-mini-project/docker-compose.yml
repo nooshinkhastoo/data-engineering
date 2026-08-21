@@ -1,0 +1,20 @@
+services:
+  backend-1:
+    build: ./backend
+    environment:
+      SERVER_NAME: backend-1
+      PORT: 3000
+
+  backend-2:
+    build: ./backend
+    environment:
+      SERVER_NAME: backend-2
+      PORT: 3000
+
+  haproxy:
+    build: ./haproxy
+    ports:
+      - "8081:8080"
+    depends_on:
+      - backend-1
+      - backend-2
