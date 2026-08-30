@@ -1,0 +1,27 @@
+services:
+
+  redis:
+    image: redis:7
+    container_name: redis-mini
+    ports:
+      - "6379:6379"
+
+  app:
+    build: ./app
+    container_name: redis-app
+    depends_on:
+      - redis
+
+  worker:
+    build: ./app
+    container_name: redis-worker
+    command: python worker.py
+    depends_on:
+      - redis
+
+  notification:
+    build: ./app
+    container_name: redis-notification
+    command: python notification.py
+    depends_on:
+      - redis
