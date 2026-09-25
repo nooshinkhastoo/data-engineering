@@ -1,0 +1,6 @@
+order_id,order_date,customer_id,product,category,quantity,unit_price
+1,2026-09-20,101,Laptop,Electronics,2,1200
+2,2026-09-20,102,Phone,Electronics,1,800
+3,2026-09-20,103,Desk,Furniture,3,250
+4,2026-09-21,101,Chair,Furniture,2,150
+5,2026-09-21,104,Mouse,Accessories,5,30
